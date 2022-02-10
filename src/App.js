@@ -1,9 +1,11 @@
+import AddressList from "./components/AddressList";
+import { v4 as uuidv4 } from "uuid";
 import "./App.css";
 
 function App() {
   return (
     <>
-      <div>ADDRESS BOOK</div>
+      <AddressList addresses={addresses} />
     </>
   );
 }
