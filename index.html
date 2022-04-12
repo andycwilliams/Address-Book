@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <form>
+        <label for="contactName">Contact Name</label>
+        <input
+          type="text"
+          id="contactName"
+          name="contactName"
+          placeholder="The contact name..."
+          required
+        />
+
+        <label for="phoneNumber">Phone Number</label>
+        <input
+          type="tel"
+          id="phoneNumber"
+          name="phoneNumber"
+          placeholder="The contact phone number..."
+        />
+
+        <label for="emailAddress">Email Address</label>
+        <input
+          type="email"
+          id="emailAddress"
+          name="emailAddress"
+          placeholder="The contact email address..."
+        />
+
+        <label for="website">Website</label>
+        <input
+          type="text"
+          id="website"
+          name="website"
+          placeholder="The contact email address..."
+        />
+
+        <label for="contactType">Contact Type</label>
+        <select id="contactType" name="country">
+          <option value="family">Family</option>
+          <option value="friends">Friends</option>
+          <option value="work">Work</option>
+        </select>
+
+        <label for="contactNotes">Notes</label>
+        <textarea
+          id="contactNotes"
+          name="contactNotes"
+          placeholder="Any notes..."
+          style="height: 100px"
+        ></textarea>
+
+        <input type="button" value="Submit" />
+      </form>
+    </form>
+  </body>
+</html>
