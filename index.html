@@ -16,7 +16,20 @@
 
     <div class="container">
       <h1>Address List</h1>
-      <div class="addresses">Your addresses will appear here.</div>
+
+      <div class="addressContainer">
+        Your addresses will appear here.
+
+        <div class="address">
+          <p><b>Example</b></p>
+          <p>John Smith</p>
+          <p>123-456-7890</p>
+          <p>email@address.com</p>
+          <p>www.website.com</p>
+          <div class="contactType friend">Friend</div>
+        </div>
+        <div class="addressList"></div>
+      </div>
       <label for="contactType">Filter by type</label>
       <select id="contactType" name="country">
         <option value="family">Family</option>
@@ -24,6 +37,7 @@
         <option value="work">Work</option>
         <option value="other">Other</option>
       </select>
+      <input type="button" value="Submit" />
     </div>
 
     <div class="container">
@@ -34,7 +48,7 @@
           type="text"
           id="contactName"
           name="contactName"
-          placeholder="The contact name..."
+          placeholder="Enter a name..."
           required
         />
 
@@ -43,7 +57,7 @@
           type="tel"
           id="phoneNumber"
           name="phoneNumber"
-          placeholder="The contact phone number..."
+          placeholder="Enter a phone number..."
         />
 
         <label for="emailAddress">Email Address</label>
@@ -51,7 +65,7 @@
           type="email"
           id="emailAddress"
           name="emailAddress"
-          placeholder="The contact email address..."
+          placeholder="Enter an email address..."
         />
 
         <label for="website">Website</label>
@@ -59,7 +73,7 @@
           type="text"
           id="website"
           name="website"
-          placeholder="The contact email address..."
+          placeholder="Enter a website..."
         />
 
         <label for="contactType">Contact Type</label>
@@ -81,6 +95,7 @@
         <input type="button" value="Submit" />
       </form>
     </div>
+    <footer><p>Footer stuff</p></footer>
     <script src="./scripts/script.js"></script>
   </body>
 </html>
