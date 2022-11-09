@@ -6,7 +6,8 @@ export default function Address({ address }) {
       <label>{address.name}</label>
       <label>{address.email}</label>
       <label>{address.phoneNumber}</label>
-      <label>{address.home}</label>
+      <label>{address.website}</label>
+      <label>{address.type}</label>
     </div>
   );
 }

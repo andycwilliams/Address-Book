@@ -1,27 +1,33 @@
 [
   {
-    "name": "Name One",
+    "firstName": "Name",
+    "lastName": "One",
+    "phoneNumber": "(123) 456-7890",
     "emailAddress": "email@address.com",
-    "phoneNumber": "(123) 456-7890"
+    "website": "WEBSITE"
   },
   {
-    "name": "Name Two",
-    "emailAddress": "email@address.com",
-    "phoneNumber": "(123) 456-7890"
+    "firstName": "Name",
+    "lastName": "Two",
+    "phoneNumber": "(123) 456-7890",
+    "emailAddress": "email@address.com"
   },
   {
-    "name": "Name Three",
-    "emailAddress": "email@address.com",
-    "phoneNumber": "(123) 456-7890"
+    "firstName": "Name",
+    "lastName": "Three",
+    "phoneNumber": "(123) 456-7890",
+    "emailAddress": "email@address.com"
   },
   {
-    "name": "Name Four",
-    "emailAddress": "email@address.com",
-    "phoneNumber": "(123) 456-7890"
+    "firstName": "Name",
+    "lastName": "Four",
+    "phoneNumber": "(123) 456-7890",
+    "emailAddress": "email@address.com"
   },
   {
-    "name": "Name Five",
-    "emailAddress": "email@address.com",
-    "phoneNumber": "(123) 456-7890"
+    "firstName": "Name",
+    "lastName": "Five",
+    "phoneNumber": "(123) 456-7890",
+    "emailAddress": "email@address.com"
   }
 ]

@@ -14,20 +14,20 @@
       <p>Add and view all of your contacts.</p>
     </header>
 
-    <div class="container">
+    <!-- <div class="container">
       <h1>Address List</h1>
 
       <div class="addressContainer">
         Your addresses will appear here.
 
         <div class="address">
-          <p><b>Example</b></p>
+          <div class="contactType friend">Friend</div>
           <p>John Smith</p>
           <p>123-456-7890</p>
           <p>email@address.com</p>
           <p>www.website.com</p>
-          <div class="contactType friend">Friend</div>
         </div>
+
         <div class="addressList"></div>
       </div>
       <label for="contactType">Filter by type</label>
@@ -38,17 +38,26 @@
         <option value="other">Other</option>
       </select>
       <input type="button" value="Submit" />
-    </div>
+    </div> -->
 
     <div class="container">
       <h1>Add Address</h1>
       <form>
-        <label for="contactName">Contact Name</label>
+        <label for="contactName">First Name</label>
         <input
           type="text"
-          id="contactName"
-          name="contactName"
-          placeholder="Enter a name..."
+          id="firstName"
+          name="firstName"
+          placeholder="Enter a first name..."
+          required
+        />
+
+        <label for="contactName">Last Name</label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          placeholder="Enter a last name..."
           required
         />
 
@@ -95,6 +104,7 @@
         <input type="button" value="Submit" />
       </form>
     </div>
+
     <footer><p>Footer stuff</p></footer>
     <script src="./scripts/script.js"></script>
   </body>
