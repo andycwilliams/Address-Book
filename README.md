@@ -1,6 +1,8 @@
 # Address-Book
 
-Simple React app to keep track of contact addresses.
+Simple app to keep track of contact addresses.
+
+React, vite, Materialize
 
 Can save (MVP):
 Name
