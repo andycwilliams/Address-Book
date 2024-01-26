@@ -47,7 +47,7 @@ const Table = () => {
         </li>
       </ul>
 
-      <table className="highlight ">
+      <table className="highlight">
         <thead>
           <tr>
             <th>Name</th>
@@ -74,6 +74,26 @@ const Table = () => {
           </tr>
         </tbody>
       </table>
+
+      <ul className="collapsible highlight">
+        <li>
+          <div className="collapsible-header">
+            <i className="material-icons">filter_drama</i>First
+          </div>
+          <div className="collapsible-body">
+            <span>Lorem ipsum dolor sit amet.</span>
+          </div>
+        </li>
+        <li>
+          <div className="collapsible-header">
+            <i className="material-icons">place</i>Second
+          </div>
+          <div className="collapsible-body">
+            <span>Lorem ipsum dolor sit amet.</span>
+          </div>
+        </li>
+      </ul>
+
       <ul className="pagination">
         <li className="disabled">
           <a href="#!">
