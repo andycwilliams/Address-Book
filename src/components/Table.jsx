@@ -20,7 +20,7 @@ const Table = () => {
         {/* <div className="indeterminate"></div> */}
       </div>
 
-      <ul className="collapsible">
+      {/* <ul className="collapsible">
         <li>
           <div className="collapsible-header">
             <i className="material-icons">filter_drama</i>First
@@ -45,9 +45,9 @@ const Table = () => {
             <span>Lorem ipsum dolor sit amet.</span>
           </div>
         </li>
-      </ul>
+      </ul> */}
 
-      <table className="highlight">
+      <table className="highlight container">
         <thead>
           <tr>
             <th>Name</th>
@@ -75,7 +75,7 @@ const Table = () => {
         </tbody>
       </table>
 
-      <ul className="collapsible highlight">
+      {/* <ul className="collapsible highlight">
         <li>
           <div className="collapsible-header">
             <i className="material-icons">filter_drama</i>First
@@ -92,7 +92,20 @@ const Table = () => {
             <span>Lorem ipsum dolor sit amet.</span>
           </div>
         </li>
-      </ul>
+      </ul> */}
+
+      {/* <a className="btn-floating btn-large waves-effect waves-light purple darken-2">
+        <i className="material-icons">add</i>
+      </a> */}
+
+      <button
+        className="btn waves-effect waves-light purple darken-2"
+        type="submit"
+        name="action"
+      >
+        Submit
+        <i className="material-icons right">send</i>
+      </button>
 
       <ul className="pagination">
         <li className="disabled">

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Simple React app to keep track of contact addresses.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -21,7 +22,9 @@
   },
   "homepage": "https://github.com/andycwilliams/Address-Book#readme",
   "dependencies": {
+    "express": "^4.18.2",
     "materialize-css": "^1.0.0-rc.2",
+    "mongoose": "^8.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
