@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 
 const app = express();
-const PORT = process.env.REACT_APP_PORT || 3001;
+const PORT = import.meta.env.VITE_PORT || 3001;
 
 mongoose.connect("mongodb://localhost/db", {
   useNewUrlParser: true,
