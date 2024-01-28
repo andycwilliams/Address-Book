@@ -41,33 +41,28 @@ const Pagination = () => {
 };
 
 const UploadButtons = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
   return (
     <>
+      {/* Desktop Button */}
       <div className="hide-on-small-only">
-        <button
-          className="btn waves-effect waves-light red darken-2"
-          onClick={openModal}
+        <UploadFormModal />
+        <a
+          className="waves-effect waves-light btn modal-trigger red darken-2"
+          href="#modal1"
         >
           Upload
-          <i className="material-icons right">add</i>
-        </button>
-        {isModalOpen && <UploadFormModal />}
+        </a>
       </div>
+
+      {/* FAB */}
       <div
         className="hide-on-med-and-up"
         style={{ position: "fixed", bottom: "20px", right: "20px" }}
       >
-        <a className="btn-floating btn-large waves-effect waves-light red  darken-2">
+        <a
+          className="waves-effect waves-light btn-floating btn-large modal-trigger red darken-2"
+          href="#modal1"
+        >
           <i className="material-icons">add</i>
         </a>
       </div>
