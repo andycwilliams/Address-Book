@@ -1,6 +1,11 @@
-// import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const UploadFormModal = () => {
+  useEffect(() => {
+    const modal = document.querySelector("#upload-form-modal");
+    window.M.Modal.init(modal, {});
+  }, []);
+
   return (
     <div id="upload-form-modal" className="modal">
       <div className="modal-content">
@@ -9,8 +14,16 @@ const UploadFormModal = () => {
       </div>
       <div className="modal-footer">
         <a href="#!" className="modal-close waves-effect waves-green btn-flat">
-          Submit
+          Button
         </a>
+        <button
+          className="btn waves-effect waves-light"
+          type="submit"
+          name="action"
+        >
+          Submit
+          <i className="material-icons right">send</i>
+        </button>
       </div>
     </div>
   );

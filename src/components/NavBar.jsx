@@ -1,7 +1,8 @@
 const NavBar = () => {
   return (
-    <nav className="purple darken-3" role="navigation">
-      <div className="nav-wrapper">
+    <nav className="purple darken-3 " role="navigation">
+      <div className="nav-wrapper container">
+        {/* TODO: Add logo */}
         <a id="logo-container" href="#" className="brand-logo">
           Address Book
         </a>

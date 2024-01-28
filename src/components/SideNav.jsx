@@ -3,7 +3,7 @@ import M from "materialize-css/dist/js/materialize.min.js";
 
 const SideNav = () => {
   useEffect(() => {
-    let sidenav = document.querySelector("#sidenav-slide");
+    const sidenav = document.querySelector("#sidenav-slide");
     M.Sidenav.init(sidenav, {});
   }, []);
 
@@ -21,16 +21,16 @@ const SideNav = () => {
       </nav>
       <ul id="sidenav-slide" className="sidenav">
         <li>
-          <p>Menu</p>
+          <h5>Menu</h5>
         </li>
         <li>
-          <a href="#item1">Item 1</a>
+          <a href="#">Log in</a>
         </li>
         <li>
-          <a href="#item2">Item 2</a>
+          <a href="#">Sign up</a>
         </li>
         <li>
-          <a href="#item3">Item 3</a>
+          <a href="#">Privacy policy</a>
         </li>
       </ul>
     </div>
