@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import M from "materialize-css";
 
 const UploadFormModal = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -9,6 +10,16 @@ const UploadFormModal = () => {
     const file = target.files[0];
     console.log("File:", file);
     setSelectedFile(file);
+  };
+
+  const handleDisplayNotification = () => {
+    M.toast({
+      html: "File added!",
+      classes: "rounded center",
+    });
+
+    // On success, close modal
+    // On failure, alert user and remain open
   };
 
   useEffect(() => {
@@ -38,13 +49,11 @@ const UploadFormModal = () => {
           className="btn waves-effect waves-light"
           type="submit"
           name="action"
+          onClick={handleDisplayNotification}
         >
           Submit
           <i className="material-icons right">send</i>
         </button>
-        <a onClick="M.toast({html: 'I am a toast'})" className="btn">
-          Toast!
-        </a>
       </div>
     </div>
   );
