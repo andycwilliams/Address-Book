@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 const UploadFormModal = () => {
   const [selectedFile, setSelectedFile] = useState(null);
 
-  const handleFileChange = (event) => {
-    console.log(event);
+  const handleFileChange = ({ target }) => {
+    setSelectedFile(null);
 
-    // const file = event.target.files[0];
-    // console.log('File:', file);
-    // setSelectedFile(file);
+    const file = target.files[0];
+    console.log("File:", file);
+    setSelectedFile(file);
   };
 
   useEffect(() => {
@@ -42,6 +42,9 @@ const UploadFormModal = () => {
           Submit
           <i className="material-icons right">send</i>
         </button>
+        <a onClick="M.toast({html: 'I am a toast'})" className="btn">
+          Toast!
+        </a>
       </div>
     </div>
   );
