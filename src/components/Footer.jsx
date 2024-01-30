@@ -42,12 +42,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="footer-copyright purple darken-4">
+      <div className="footer-copyright purple darken-4 center">
         <div className="container">
-          &copy; {currentYear} Address Book. All rights reserved.
-          <a className="grey-text text-lighten-4 right" href="#!">
-            More Links
-          </a>
+          &copy;{currentYear} Address Book. All rights reserved.
         </div>
       </div>
     </footer>

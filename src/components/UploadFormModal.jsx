@@ -32,13 +32,24 @@ const UploadFormModal = () => {
       <div className="modal-content">
         <h4>Upload File</h4>
         <p>Select a file to upload</p>
-        <div>
-          <input
-            type="file"
-            onChange={handleFileChange}
-            accept=".pdf, .doc, .docx"
-          />
-          <p>Selected File: {selectedFile ? selectedFile.name : "None"}</p>
+        <div className="file-field input-field">
+          <div className="btn">
+            <span>Select</span>
+            <input
+              type="file"
+              onChange={handleFileChange}
+              accept=".pdf, .doc, .docx"
+            />
+            <i className="material-icons right">cloud_upload</i>
+          </div>
+          <div className="file-path-wrapper">
+            <input
+              className="file-path validate"
+              type="text"
+              placeholder={selectedFile ? selectedFile.name : "None"}
+              readOnly
+            />
+          </div>
         </div>
       </div>
       <div className="modal-footer">

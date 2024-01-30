@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css";
-// import SideNav from "./SideNav";
 
 const NavBar = () => {
   useEffect(() => {
@@ -10,9 +9,6 @@ const NavBar = () => {
 
   return (
     <div>
-      {/* Include the SideNav component here */}
-      {/* <SideNav /> */}
-
       <nav className="purple darken-3 " role="navigation">
         <div className="nav-wrapper container">
           {/* TODO: Add logo */}
@@ -26,25 +22,45 @@ const NavBar = () => {
 
           <ul className="right hide-on-med-and-down">
             <li>
-              <a href="#">Log in</a>
+              <a href="#!">Log in</a>
             </li>
             <li>
-              <a href="#">Sign up</a>
+              <a href="#!">Sign up</a>
             </li>
             <li>
-              <a href="#">Privacy policy</a>
+              <a href="#!">Privacy policy</a>
             </li>
           </ul>
 
           <ul id="nav-mobile" className="sidenav">
             <li>
-              <a href="#">Log in</a>
+              <div className="menu-header purple darken-3 white-text center-align">
+                <h5 style={{ margin: 0, padding: 10 }}>Menu</h5>
+              </div>
             </li>
             <li>
-              <a href="#">Sign up</a>
+              <a
+                href="#!"
+                className="waves-effect waves-light btn purple white-text"
+              >
+                Log in
+              </a>
             </li>
             <li>
-              <a href="#">Privacy policy</a>
+              <a
+                href="#!"
+                className="waves-effect waves-light btn purple white-text"
+              >
+                Sign up
+              </a>
+            </li>
+            <li>
+              <a
+                href="#!"
+                className="waves-effect waves-light btn purple white-text"
+              >
+                Privacy policy
+              </a>
             </li>
           </ul>
         </div>
@@ -54,23 +70,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
-{
-  /* 
-          <ul id="nav-mobile" className="sidenav">
-            <li>
-              <a href="#">Log in</a>
-            </li>
-            <li>
-              <a href="#">Sign up</a>
-            </li>
-            <li>
-              <a href="#">Privacy policy</a>
-            </li>
-          </ul> */
-}
-{
-  /* <a href="#" data-target="nav-mobile" className="sidenav-trigger">
-            <i className="material-icons">menu</i>
-          </a> */
-}

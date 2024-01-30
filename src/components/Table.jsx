@@ -72,7 +72,7 @@ const UploadButtons = () => {
 
 const Table = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [addressData, setAddressData] = useState(null);
+  // const [addressData, setAddressData] = useState(null);
   const [isCheckboxClicked, setIsCheckboxClicked] = useState(false);
   const [isButtonClicked, setIsButtonClicked] = useState(false);
 
