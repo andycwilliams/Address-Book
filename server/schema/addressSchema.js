@@ -5,4 +5,4 @@ const addressSchema = new mongoose.Schema({
   uploadDate: new Date(),
 });
 
-const Address = mongoose.model("Address", addressSchema);
+// const Address = mongoose.model("Address", addressSchema);
