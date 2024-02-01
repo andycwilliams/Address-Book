@@ -7,3 +7,9 @@
 #logo-container {
   white-space: nowrap;
 }
+
+.truncate {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

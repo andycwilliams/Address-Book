@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import M from "materialize-css/dist/js/materialize.min.js";
-import UploadFormModal from "./UploadFormModal";
 
 const sampleData = [
   { name: "Address 1", uploadDate: new Date() },
@@ -37,36 +36,6 @@ const Pagination = () => {
         </a>
       </li>
     </ul>
-  );
-};
-
-const UploadButtons = () => {
-  return (
-    <>
-      {/* Desktop Button */}
-      <div className="hide-on-small-only">
-        <UploadFormModal />
-        <a
-          className="waves-effect waves-light btn modal-trigger red darken-2"
-          href="#modal1"
-        >
-          Upload
-        </a>
-      </div>
-
-      {/* FAB */}
-      <div
-        className="hide-on-med-and-up"
-        style={{ position: "fixed", bottom: "20px", right: "20px" }}
-      >
-        <a
-          className="waves-effect waves-light btn-floating btn-large modal-trigger red darken-2"
-          href="#modal1"
-        >
-          <i className="material-icons">add</i>
-        </a>
-      </div>
-    </>
   );
 };
 
@@ -143,7 +112,7 @@ const Table = () => {
                     )}
                   </td>
                   <td>{name}</td>
-                  <td>{uploadDate.toString()}</td>
+                  <td className="">{uploadDate.toString()}</td>
                   <td>
                     <a
                       className="btn-flat waves-effect waves-light"
@@ -166,8 +135,6 @@ const Table = () => {
           <div>Selected: 0 of 10</div>
 
           <Pagination />
-
-          <UploadButtons />
         </div>
       )}
     </>

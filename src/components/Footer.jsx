@@ -20,22 +20,22 @@ const Footer = () => {
             <ul>
               <li>
                 <a className="grey-text text-lighten-3" href="#!">
-                  Link 1
+                  About Us
                 </a>
               </li>
               <li>
                 <a className="grey-text text-lighten-3" href="#!">
-                  Link 2
+                  News
                 </a>
               </li>
               <li>
                 <a className="grey-text text-lighten-3" href="#!">
-                  Link 3
+                  Privacy Policy
                 </a>
               </li>
               <li>
                 <a className="grey-text text-lighten-3" href="#!">
-                  Link 4
+                  Contact Us
                 </a>
               </li>
             </ul>

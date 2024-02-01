@@ -19,6 +19,10 @@ const UploadFormModal = () => {
     });
 
     // On success, close modal
+    // setTimeout(() => {
+    // code here
+    // }, 1000);
+
     // On failure, alert user and remain open
   };
 
@@ -28,7 +32,7 @@ const UploadFormModal = () => {
   }, []);
 
   return (
-    <div id="modal1" className="modal">
+    <div id="modal1" className="modal center">
       <div className="modal-content">
         <h4>Upload File</h4>
         <p>Select a file to upload</p>
@@ -53,8 +57,12 @@ const UploadFormModal = () => {
         </div>
       </div>
       <div className="modal-footer">
-        <a href="#!" className="modal-close waves-effect waves-green btn-flat">
+        <a
+          href="#!"
+          className="modal-close waves-effect waves-green btn-flat left"
+        >
           Close
+          <i className="material-icons right">close</i>
         </a>
         <button
           className="btn waves-effect waves-light"
