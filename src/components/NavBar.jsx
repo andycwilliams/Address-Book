@@ -27,9 +27,6 @@ const NavBar = () => {
             <li>
               <a href="#!">Sign up</a>
             </li>
-            <li>
-              <a href="#!">Privacy policy</a>
-            </li>
           </ul>
 
           <ul id="nav-mobile" className="sidenav">
@@ -52,14 +49,6 @@ const NavBar = () => {
                 className="waves-effect waves-light btn purple white-text"
               >
                 Sign up
-              </a>
-            </li>
-            <li>
-              <a
-                href="#!"
-                className="waves-effect waves-light btn purple white-text"
-              >
-                Privacy policy
               </a>
             </li>
           </ul>

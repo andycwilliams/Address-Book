@@ -44,28 +44,47 @@ const Table = () => {
   // const [addressData, setAddressData] = useState(null);
   const [isCheckboxClicked, setIsCheckboxClicked] = useState(false);
   const [isButtonClicked, setIsButtonClicked] = useState(false);
+  const [selectedRows, setSelectedRows] = useState([]);
+  const isAllRowsSelected = selectedRows.length === sampleData.length;
 
-  const handleCheckboxClick = () => {
-    setIsCheckboxClicked(!isCheckboxClicked);
+  const handleCheckboxClick = (index) => {
+    const isSelected = selectedRows.includes(index);
+
+    setSelectedRows((previousSelections) => {
+      if (isSelected) {
+        return previousSelections.filter((i) => i !== index);
+      } else {
+        return [...previousSelections, index];
+      }
+    });
   };
 
-  const handleCheckboxClickAll = () => {};
+  const handleCheckboxClickAll = () => {
+    if (isAllRowsSelected) {
+      // If all rows are already selected, unselect all
+      setSelectedRowIndices([]);
+    } else {
+      // If not all rows are selected, select all
+      const allRowIndices = sampleData.map((_, index) => index);
+      setSelectedRowIndices(allRowIndices);
+    }
+  };
 
   const handleButtonClick = () => {
     setIsButtonClicked(!isButtonClicked);
     console.log("Button clicked");
   };
 
-  useEffect(() => {
-    const elems = document.querySelectorAll(".collapsible");
-    const collapsibleRows = M.Collapsible.init(elems, {});
+  // useEffect(() => {
+  //   const elems = document.querySelectorAll(".collapsible");
+  //   const collapsibleRows = M.Collapsible.init(elems, {});
 
-    return () => {
-      collapsibleRows.forEach((e) => {
-        e.destroy();
-      });
-    };
-  }, []);
+  //   return () => {
+  //     collapsibleRows.forEach((e) => {
+  //       e.destroy();
+  //     });
+  //   };
+  // }, []);
 
   return (
     <>
@@ -99,17 +118,15 @@ const Table = () => {
               {sampleData.map(({ name, uploadDate }, index) => (
                 <tr key={index}>
                   <td>
-                    {isCheckboxClicked ? (
-                      <span onClick={handleCheckboxClick}>
+                    <span onClick={() => handleCheckboxClick(index)}>
+                      {selectedRows.includes(index) ? (
                         <i className="material-icons">check_box</i>
-                      </span>
-                    ) : (
-                      <span onClick={handleCheckboxClick}>
+                      ) : (
                         <i className="material-icons">
                           check_box_outline_blank
                         </i>
-                      </span>
-                    )}
+                      )}
+                    </span>
                   </td>
                   <td>{name}</td>
                   <td className="">{uploadDate.toString()}</td>
