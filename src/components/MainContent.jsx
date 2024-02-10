@@ -1,3 +1,4 @@
+// Component Imports
 import UploadFormModal from "./UploadFormModal";
 
 const SearchBar = () => {
@@ -28,6 +29,10 @@ const UploadButtons = () => {
           Upload
           <i className="material-icons right">add</i>
         </button>
+        <button className="waves-effect waves-light btn red darken-2 disabled">
+          New folder
+          <i className="material-icons right">create_new_folder</i>
+        </button>
       </div>
 
       {/* FAB */}
@@ -48,13 +53,9 @@ const UploadButtons = () => {
 
 const MainContent = () => {
   return (
-    <div className="container">
-      <div className=""></div>
+    <div className="container table">
+      {/* <div className=""></div> */}
       <UploadButtons />
-      <button className="waves-effect waves-light btn red darken-2 disabled">
-        New folder
-        <i className="material-icons right">create_new_folder</i>
-      </button>
       <SearchBar />
       <UploadFormModal />
     </div>

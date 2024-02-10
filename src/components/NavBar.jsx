@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css";
+// Component Imports
+import LogInModal from "./LogInModal";
 
 const NavBar = () => {
   useEffect(() => {
@@ -37,11 +39,20 @@ const NavBar = () => {
             </li>
             <li>
               <a
-                href="#!"
-                className="waves-effect waves-light btn purple white-text"
+                // href="#modal2"
+                className="waves-effect waves-light btn modal-trigger purple white-text"
               >
                 Log in
               </a>
+            </li>
+            <li>
+              <button
+                className="waves-effect waves-light btn modal-trigger purple white-text"
+                href="#modal2"
+              >
+                LOG IN
+                {/* <i className="material-icons right">add</i> */}
+              </button>
             </li>
             <li>
               <a
@@ -54,6 +65,7 @@ const NavBar = () => {
           </ul>
         </div>
       </nav>
+      <LogInModal />
     </div>
   );
 };

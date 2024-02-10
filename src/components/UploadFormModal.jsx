@@ -6,24 +6,44 @@ const UploadFormModal = () => {
 
   const handleFileChange = ({ target }) => {
     setSelectedFile(null);
-
     const file = target.files[0];
-    console.log("File:", file);
+
+    if (file) {
+      console.log("File:", file.name);
+      // setSelectedFile(file);
+    } else {
+      console.log("Selection cleared!");
+      // setSelectedFile(null);
+    }
+
     setSelectedFile(file);
   };
 
+  const handleClearFile = () => {
+    setSelectedFile(null);
+  };
+
   const handleDisplayNotification = () => {
-    M.toast({
-      html: "File added!",
-      classes: "rounded center",
-    });
+    if (selectedFile) {
+      M.toast({
+        html: "File added!",
+        classes: "rounded center",
+        displayLength: 2000,
+      });
 
-    // On success, close modal
-    // setTimeout(() => {
-    // code here
-    // }, 1000);
+      // On failure, alert user and remain open
 
-    // On failure, alert user and remain open
+      const modalInstance = M.Modal.getInstance(
+        document.querySelector("#modal1")
+      );
+      modalInstance.close();
+    } else {
+      M.toast({
+        html: "Please select a file",
+        classes: "rounded center red",
+        displayLength: 2000,
+      });
+    }
   };
 
   useEffect(() => {
@@ -35,7 +55,6 @@ const UploadFormModal = () => {
     <div id="modal1" className="modal center">
       <div className="modal-content">
         <h4>Upload File</h4>
-        <p>Select a file to upload</p>
         <div className="file-field input-field">
           <div className="btn">
             <span>Select</span>
@@ -44,7 +63,6 @@ const UploadFormModal = () => {
               onChange={handleFileChange}
               accept=".pdf, .doc, .docx"
             />
-            <i className="material-icons right">cloud_upload</i>
           </div>
           <div className="file-path-wrapper">
             <input
@@ -53,26 +71,30 @@ const UploadFormModal = () => {
               placeholder={selectedFile ? selectedFile.name : "None"}
               readOnly
             />
+            {selectedFile && (
+              <button
+                className="btn waves-effect waves-light right"
+                onClick={handleClearFile}
+              >
+                Clear
+                <i className="material-icons right">clear</i>
+              </button>
+            )}
           </div>
         </div>
       </div>
       <div className="modal-footer">
-        <a
-          href="#!"
-          className="modal-close waves-effect waves-green btn-flat left"
-        >
-          Close
-          <i className="material-icons right">close</i>
-        </a>
         <button
           className="btn waves-effect waves-light"
-          type="submit"
-          name="action"
           onClick={handleDisplayNotification}
         >
           Submit
           <i className="material-icons right">send</i>
         </button>
+        <a href="#!" className="waves-effect waves-green btn-flat left">
+          Close
+          <i className="material-icons right">close</i>
+        </a>
       </div>
     </div>
   );
