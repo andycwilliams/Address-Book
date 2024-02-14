@@ -3,6 +3,7 @@ import M from "materialize-css";
 
 const UploadFormModal = () => {
   const [selectedFile, setSelectedFile] = useState(null);
+  console.log("test");
 
   const handleFileChange = ({ target }) => {
     setSelectedFile(null);

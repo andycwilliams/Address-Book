@@ -24,10 +24,16 @@ const NavBar = () => {
 
           <ul className="right hide-on-med-and-down">
             <li>
-              <a href="#!">Log in</a>
+              <a href="#!" className="modal-trigger" data-target="modal2">
+                Log in
+              </a>
             </li>
             <li>
-              <a href="#!">Sign up</a>
+              <a
+                href="#!"
+              >
+                Sign up
+              </a>
             </li>
           </ul>
 
@@ -39,20 +45,12 @@ const NavBar = () => {
             </li>
             <li>
               <a
-                // href="#modal2"
+                href="#!"
                 className="waves-effect waves-light btn modal-trigger purple white-text"
+                data-target="modal2"
               >
                 Log in
               </a>
-            </li>
-            <li>
-              <button
-                className="waves-effect waves-light btn modal-trigger purple white-text"
-                href="#modal2"
-              >
-                LOG IN
-                {/* <i className="material-icons right">add</i> */}
-              </button>
             </li>
             <li>
               <a

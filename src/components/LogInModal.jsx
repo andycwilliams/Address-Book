@@ -12,7 +12,7 @@ const LogInModal = () => {
   return (
     <div id="modal2" className="modal center">
       <div className="modal-content">
-        <h4>LogInModal</h4>
+        <h4>Log In</h4>
       </div>
       <div className="modal-footer">
         <p>Already have an account? Click here.</p>

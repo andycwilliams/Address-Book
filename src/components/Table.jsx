@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import M from "materialize-css/dist/js/materialize.min.js";
+// import M from "materialize-css/dist/js/materialize.min.js";
 
 const sampleData = [
   { name: "Address 1", uploadDate: new Date() },
