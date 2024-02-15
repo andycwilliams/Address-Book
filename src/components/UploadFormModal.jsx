@@ -3,7 +3,7 @@ import M from "materialize-css";
 
 const UploadFormModal = () => {
   const [selectedFile, setSelectedFile] = useState(null);
-  console.log("test");
+  // console.log("test");
 
   const handleFileChange = ({ target }) => {
     setSelectedFile(null);
@@ -11,16 +11,17 @@ const UploadFormModal = () => {
 
     if (file) {
       console.log("File:", file.name);
-      // setSelectedFile(file);
+      setSelectedFile(file);
     } else {
       console.log("Selection cleared!");
-      // setSelectedFile(null);
+      setSelectedFile(null);
     }
 
     setSelectedFile(file);
   };
 
   const handleClearFile = () => {
+    console.log("Clearing file");
     setSelectedFile(null);
   };
 
@@ -31,9 +32,6 @@ const UploadFormModal = () => {
         classes: "rounded center",
         displayLength: 2000,
       });
-
-      // On failure, alert user and remain open
-
       const modalInstance = M.Modal.getInstance(
         document.querySelector("#modal1")
       );
@@ -56,8 +54,8 @@ const UploadFormModal = () => {
     <div id="modal1" className="modal center">
       <div className="modal-content">
         <h4>Upload File</h4>
-        <div className="file-field input-field">
-          <div className="btn">
+        <div className="file-field input-field row">
+          <div className="btn col s12 m2">
             <span>Select</span>
             <input
               type="file"
@@ -65,37 +63,39 @@ const UploadFormModal = () => {
               accept=".pdf, .doc, .docx"
             />
           </div>
-          <div className="file-path-wrapper">
+          <div className="file-path-wrapper col s12 m8">
             <input
               className="file-path validate"
               type="text"
               placeholder={selectedFile ? selectedFile.name : "None"}
-              readOnly
+              readOnly={!selectedFile}
             />
-            {selectedFile && (
+          </div>
+          {selectedFile && (
+            <div>
               <button
-                className="btn waves-effect waves-light right"
+                className="btn waves-effect waves-light right col s12 m2"
                 onClick={handleClearFile}
               >
                 Clear
                 <i className="material-icons right">clear</i>
               </button>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
-      <div className="modal-footer">
+      <div className="modal-footer row">
         <button
-          className="btn waves-effect waves-light"
+          className="btn waves-effect waves-light col s12 m6"
           onClick={handleDisplayNotification}
         >
           Submit
           <i className="material-icons right">send</i>
         </button>
-        <a href="#!" className="waves-effect waves-green btn-flat left">
+        <button className="modal-close waves-effect waves-green btn-flat left col s12 m6">
           Close
           <i className="material-icons right">close</i>
-        </a>
+        </button>
       </div>
     </div>
   );
