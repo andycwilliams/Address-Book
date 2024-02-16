@@ -1,10 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css";
 // Component Imports
 import LogInModal from "./LogInModal";
 
 const NavBar = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   useEffect(() => {
     M.AutoInit();
   }, []);
@@ -25,14 +27,7 @@ const NavBar = () => {
           <ul className="right hide-on-med-and-down">
             <li>
               <a href="#!" className="modal-trigger" data-target="modal2">
-                Log in
-              </a>
-            </li>
-            <li>
-              <a
-                href="#!"
-              >
-                Sign up
+                {!isLoggedIn ? "Log in" : "Sign Up"}
               </a>
             </li>
           </ul>
@@ -49,15 +44,42 @@ const NavBar = () => {
                 className="waves-effect waves-light btn modal-trigger purple white-text"
                 data-target="modal2"
               >
-                Log in
+                {!isLoggedIn ? "Log in" : "Sign Up"}
+              </a>
+            </li>
+            <li>
+              <p>Test</p>
+            </li>
+            <li>
+              <a
+                href="#!"
+                className="waves-effect waves-purple btn-small btn-flat white purple-text"
+              >
+                About Us
               </a>
             </li>
             <li>
               <a
                 href="#!"
-                className="waves-effect waves-light btn purple white-text"
+                className="waves-effect waves-purple btn-small btn-flat white purple-text"
               >
-                Sign up
+                News
+              </a>
+            </li>
+            <li>
+              <a
+                href="#!"
+                className="waves-effect waves-purple btn-small btn-flat white purple-text"
+              >
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a
+                href="#!"
+                className="waves-effect waves-purple btn-small btn-flat white purple-text"
+              >
+                Contact Us
               </a>
             </li>
           </ul>

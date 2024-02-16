@@ -1,10 +1,17 @@
 import { useEffect, useState } from "react";
 // import M from "materialize-css/dist/js/materialize.min.js";
 
+const currentDate = new Date();
+const formattedDate = currentDate.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
 const sampleData = [
-  { name: "Address 1", uploadDate: new Date() },
-  { name: "Address 2", uploadDate: new Date() },
-  { name: "Address 3", uploadDate: new Date() },
+  { name: "Address 1", uploadDate: formattedDate },
+  { name: "Address 2", uploadDate: formattedDate },
+  { name: "Address 3", uploadDate: formattedDate },
 ];
 
 const Pagination = () => {
@@ -46,6 +53,10 @@ const Table = () => {
   const [isButtonClicked, setIsButtonClicked] = useState(false);
   const [selectedRows, setSelectedRows] = useState([]);
   const isAllRowsSelected = selectedRows.length === sampleData.length;
+
+  // useEffect(() => {
+  //   M.AutoInit();
+  // }, []);
 
   const handleCheckboxClick = (index) => {
     const isSelected = selectedRows.includes(index);
@@ -89,8 +100,10 @@ const Table = () => {
   return (
     <>
       {isLoading ? (
-        <div className="progress container">
-          <div className="indeterminate"></div>
+        <div className="table container center z-depth-1">
+          <div className="progress container">
+            <div className="indeterminate"></div>
+          </div>
         </div>
       ) : (
         <div className="table container center z-depth-1">
@@ -129,16 +142,22 @@ const Table = () => {
                     </span>
                   </td>
                   <td>{name}</td>
-                  <td className="">{uploadDate.toString()}</td>
+                  <td
+                    className="tooltipped"
+                    data-position="bottom"
+                    data-tooltip={new Date()}
+                  >
+                    {uploadDate.toString()}
+                  </td>
                   <td>
                     <a
-                      className="btn-flat waves-effect waves-light"
+                      className="btn-flat waves-effect"
                       onClick={handleButtonClick}
                     >
                       <i className="material-icons">archive</i>
                     </a>
                     <a
-                      className="btn-flat waves-effect waves-light"
+                      className="btn-flat waves-effect"
                       onClick={handleButtonClick}
                     >
                       <i className="material-icons">delete</i>

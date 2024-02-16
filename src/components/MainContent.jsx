@@ -53,7 +53,7 @@ const UploadButtons = () => {
 
 const MainContent = () => {
   return (
-    <div className="container table">
+    <div className="container mainContent">
       {/* <div className=""></div> */}
       <UploadButtons />
       <SearchBar />
