@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-// import M from "materialize-css/dist/js/materialize.min.js";
+import M from "materialize-css/dist/js/materialize.min.js";
+import DialogBox from "./DialogBox";
 
 const currentDate = new Date();
 const formattedDate = currentDate.toLocaleDateString("en-US", {
@@ -16,7 +17,7 @@ const sampleData = [
 
 const Pagination = () => {
   return (
-    <ul className="pagination">
+    <ul className="pagination hide-on-small-only">
       <li className="disabled">
         <a href="#!">
           <i className="material-icons">chevron_left</i>
@@ -46,17 +47,33 @@ const Pagination = () => {
   );
 };
 
+// const renderData = () => {}
+
 const Table = () => {
   const [isLoading, setIsLoading] = useState(false);
   // const [addressData, setAddressData] = useState(null);
   const [isCheckboxClicked, setIsCheckboxClicked] = useState(false);
-  const [isButtonClicked, setIsButtonClicked] = useState(false);
+  // const [isButtonClicked, setIsButtonClicked] = useState(false);
   const [selectedRows, setSelectedRows] = useState([]);
+  const [dialogBoxActionType, setDialogBoxActionType] = useState(null);
   const isAllRowsSelected = selectedRows.length === sampleData.length;
 
   // useEffect(() => {
   //   M.AutoInit();
   // }, []);
+
+  const handleButtonClick = (actionType) => {
+    if (actionType === "archive") {
+      setDialogBoxActionType("Archive");
+    } else if (actionType === "delete") {
+      setDialogBoxActionType("Delete");
+    }
+
+    const modalInstance = M.Modal.getInstance(
+      document.querySelector("#modal3")
+    );
+    modalInstance.open();
+  };
 
   const handleCheckboxClick = (index) => {
     const isSelected = selectedRows.includes(index);
@@ -81,10 +98,10 @@ const Table = () => {
     }
   };
 
-  const handleButtonClick = () => {
-    setIsButtonClicked(!isButtonClicked);
-    console.log("Button clicked");
-  };
+  // const handleButtonClick = () => {
+  //   setIsButtonClicked(!isButtonClicked);
+  //   console.log("Button clicked");
+  // };
 
   // useEffect(() => {
   //   const elems = document.querySelectorAll(".collapsible");
@@ -107,10 +124,10 @@ const Table = () => {
         </div>
       ) : (
         <div className="table container center z-depth-1">
-          <table className="highlight">
+          <table className="highlight responsive-table ">
             <thead>
               <tr>
-                <th>
+                <th className="hide-on-small-only">
                   {isCheckboxClicked ? (
                     <span onClick={handleCheckboxClickAll}>
                       <i className="material-icons">check_box</i>
@@ -130,7 +147,7 @@ const Table = () => {
             <tbody>
               {sampleData.map(({ name, uploadDate }, index) => (
                 <tr key={index}>
-                  <td>
+                  <td className="hide-on-small-only">
                     <span onClick={() => handleCheckboxClick(index)}>
                       {selectedRows.includes(index) ? (
                         <i className="material-icons">check_box</i>
@@ -141,7 +158,7 @@ const Table = () => {
                       )}
                     </span>
                   </td>
-                  <td>{name}</td>
+                  <td className="center-align valign-wrapper">{name}</td>
                   <td
                     className="tooltipped"
                     data-position="bottom"
@@ -151,14 +168,16 @@ const Table = () => {
                   </td>
                   <td>
                     <a
-                      className="btn-flat waves-effect"
-                      onClick={handleButtonClick}
+                      href="#modal3"
+                      className="btn-flat waves-effect modal-trigger"
+                      onClick={() => handleButtonClick("archive")}
                     >
-                      <i className="material-icons">archive</i>
+                      <i className="material-icons ">archive</i>
                     </a>
                     <a
-                      className="btn-flat waves-effect"
-                      onClick={handleButtonClick}
+                      href="#modal3"
+                      className="btn-flat waves-effect modal-trigger"
+                      onClick={() => handleButtonClick("delete")}
                     >
                       <i className="material-icons">delete</i>
                     </a>
@@ -168,9 +187,10 @@ const Table = () => {
             </tbody>
           </table>
 
-          <div>Selected: 0 of 10</div>
+          <div className="hide-on-small-only">Selected: 0 of 10</div>
 
           <Pagination />
+          <DialogBox action={dialogBoxActionType} />
         </div>
       )}
     </>

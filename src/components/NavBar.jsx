@@ -13,7 +13,7 @@ const NavBar = () => {
 
   return (
     <div>
-      <nav className="purple darken-3 " role="navigation">
+      <nav className="purple darken-3" role="navigation">
         <div className="nav-wrapper container">
           {/* TODO: Add logo */}
           <a id="logo-container" href="#" className="brand-logo">
