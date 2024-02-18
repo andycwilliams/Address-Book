@@ -1,4 +1,5 @@
 import { useState } from "react";
+import M from "materialize-css";
 
 const DialogBox = (action) => {
   const [isArchive, setIsArchive] = useState(true);
@@ -8,6 +9,41 @@ const DialogBox = (action) => {
   } else if (action === "delete") {
     setIsArchive(false);
   }
+
+  const handleDisplayNotification = () => {
+    if (isArchive) {
+      M.toast({
+        html: "Address archived!",
+        classes: "rounded center blue",
+        displayLength: 2000,
+      });
+      const modalInstance = M.Modal.getInstance(
+        document.querySelector("#modal3")
+      );
+      modalInstance.close();
+    } else if (!isArchive) {
+      M.toast({
+        html: "Address deleted!",
+        classes: "rounded center red",
+        displayLength: 2000,
+      });
+      const modalInstance = M.Modal.getInstance(
+        document.querySelector("#modal3")
+      );
+      modalInstance.close();
+    } else {
+      console.log("Error");
+      M.toast({
+        html: "Error",
+        classes: "rounded center red",
+        displayLength: 2000,
+      });
+      const modalInstance = M.Modal.getInstance(
+        document.querySelector("#modal3")
+      );
+      modalInstance.close();
+    }
+  };
 
   return (
     <div id="modal3" className="modal">
@@ -30,6 +66,7 @@ const DialogBox = (action) => {
         <a
           href="#!"
           className="modal-close waves-effect waves-red red text-white btn right"
+          onClick={handleDisplayNotification}
         >
           Confirm
         </a>

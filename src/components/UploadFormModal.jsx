@@ -84,7 +84,8 @@ const UploadFormModal = () => {
           )}
         </div>
       </div>
-      <div className="modal-footer row">
+      <div className="modal-footer">
+        <div className="row">
         <button
           className="btn waves-effect waves-light col s12 m6"
           onClick={handleDisplayNotification}
@@ -95,7 +96,7 @@ const UploadFormModal = () => {
         <button className="modal-close waves-effect waves-green btn-flat left col s12 m6">
           Close
           <i className="material-icons right">close</i>
-        </button>
+        </button></div>
       </div>
     </div>
   );
