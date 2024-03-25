@@ -3,9 +3,11 @@ import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css";
 // Component Imports
 import LogInModal from "./LogInModal";
+// PropTypes Imports
+import PropTypes from 'prop-types';
 
-const NavBar = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+const NavBar = ({ isLoggedIn, toggleLogin }) => {
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     M.AutoInit();
@@ -85,9 +87,14 @@ const NavBar = () => {
           </ul>
         </div>
       </nav>
-      <LogInModal />
+      <LogInModal isLoggedIn={isLoggedIn} toggleLogin={toggleLogin} />
     </div>
   );
+};
+
+NavBar.propTypes = {
+  isLoggedIn: PropTypes.bool.isRequired,
+  toggleLogin: PropTypes.func.isRequired,
 };
 
 export default NavBar;

@@ -1,7 +1,12 @@
+// React Imports
 import { useEffect, useState } from "react";
+// Materialize Imports
 import M from "materialize-css";
+// PropTypes Imports
+import PropTypes from "prop-types";
 
-const LogInModal = () => {
+const LogInModal = ({ isLoggedIn, toggleLogin }) => {
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLogInForm, setIsLogInForm] = useState(true);
   // console.log("Login modal");
 
@@ -14,21 +19,15 @@ const LogInModal = () => {
     setIsLogInForm(!isLogInForm);
   };
 
-  const handleNextAction = () => {
-    if (isLogInForm) {
-      console.log("Log in!");
-    } else {
-      console.log("Sign up!");
-    }
+  const handleLoginClick = () => {
+    toggleLogin();
   };
 
   return (
     <div id="modal2" className="modal center modal-fixed-footer">
       <div className="modal-content">
         <h4>{isLogInForm ? "Log In" : "Sign Up"}</h4>
-        <p>
-          {isLogInForm ? "To access your account" : "Create a free account"}
-        </p>
+        <p>{isLogInForm ? "Access your account" : "Create a free account"}</p>
         <div
         // className="row"
         // style={{ margin: 0 }}
@@ -78,7 +77,7 @@ const LogInModal = () => {
         </button>
         <button
           className="waves-effect waves-purple btn-flat white-text right"
-          onClick={handleNextAction}
+          onClick={handleLoginClick}
         >
           <span className="hide-on-small-only">Next</span>
           <i className="material-icons right hide-on-small-only">
@@ -89,6 +88,11 @@ const LogInModal = () => {
       </div>
     </div>
   );
+};
+
+LogInModal.propTypes = {
+  isLoggedIn: PropTypes.bool.isRequired,
+  toggleLogin: PropTypes.func.isRequired,
 };
 
 export default LogInModal;
